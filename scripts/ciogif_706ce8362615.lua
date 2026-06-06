@@ -1,0 +1,79 @@
+local p=game:GetService"Players".LocalPlayer
+local r=game:GetService"RunService"
+if not p then return end
+local g=Instance.new"ScreenGui"
+g.Name="GIFView"
+g.ResetOnSpawn=false
+g.Parent=p:WaitForChild"PlayerGui"
+local f=Instance.new"Frame"
+f.Size=UDim2.new(0,200,0,200)
+f.Position=UDim2.new(0.5,-100,0.5,-100)
+f.BackgroundTransparency=1
+f.Parent=g
+local u={"https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_0.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_1.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_2.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_3.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_4.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_5.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_6.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_7.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_8.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_9.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_10.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_11.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_12.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_13.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_14.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_15.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_16.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_17.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_18.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_19.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_20.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_21.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_22.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_23.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_24.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_25.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_26.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_27.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_28.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_29.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_30.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_31.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_32.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_33.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_34.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_35.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_36.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_37.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_38.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_39.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_40.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_41.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_42.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_43.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_44.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_45.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_46.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_47.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_48.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_49.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_50.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_51.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_52.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_53.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_54.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_55.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_56.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_57.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_58.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_59.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_60.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_61.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_62.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_63.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_64.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_65.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_66.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_67.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_68.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_69.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_70.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_71.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_72.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_73.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_74.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_75.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_76.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_77.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_78.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_79.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_80.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_81.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_82.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_83.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_84.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_85.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_86.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_87.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_88.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_89.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_90.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_91.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_92.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_93.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_94.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_95.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_96.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_97.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_98.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_99.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_100.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_101.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_102.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_103.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_104.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_105.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_106.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_107.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_108.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_109.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_110.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_111.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_112.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_113.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_114.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_115.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_116.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_117.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_118.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_119.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_120.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_121.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_122.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_123.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_124.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_125.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_126.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_127.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_128.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_129.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_130.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_131.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_132.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_133.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_134.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_135.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_136.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_137.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_138.png","https://raw.githubusercontent.com/Josediazi/ds/main/frames/gif_706ce8362615_frame_139.png"}
+local a={}
+local c=1
+local t=true
+local d=42
+local hash="706ce8362615"
+local au="audio_att_1780781794165.mp3"
+if not isfile(au) then writefile(au,game:HttpGet("https://raw.githubusercontent.com/Josediazi/ds/main/audios/audio_att_1780781794165.mp3")) end
+local snd=Instance.new"Sound"
+snd.SoundId=getcustomasset(au)
+snd.Volume=1
+snd.Looped=true
+snd.Parent=game.Workspace
+for i=1,#u do
+local n="f"..i.."_"..hash..".png"
+if not isfile(n) then writefile(n,game:HttpGet(u[i])) end
+local l=Instance.new"ImageLabel"
+l.Size=UDim2.new(1,0,1,0)
+l.BackgroundTransparency=1
+l.Image=getcustomasset(n)
+l.Visible=(i==1)
+l.Parent=f
+a[i]=l
+end
+snd:Play()
+local b=Instance.new"TextButton"
+b.Size=UDim2.new(0,60,0,30)
+b.Position=UDim2.new(0.5,-110,1,10)
+b.Text="Pause"
+b.BackgroundColor3=Color3.fromRGB(40,40,40)
+b.TextColor3=Color3.new(1,1,1)
+b.Font=Enum.Font.GothamBold
+b.TextSize=13
+b.BorderSizePixel=0
+b.Parent=g
+local x=Instance.new"TextButton"
+x.Size=UDim2.new(0,60,0,30)
+x.Position=UDim2.new(0.5,50,1,10)
+x.Text="Stop"
+x.BackgroundColor3=Color3.fromRGB(180,40,40)
+x.TextColor3=Color3.new(1,1,1)
+x.Font=Enum.Font.GothamBold
+x.TextSize=13
+x.BorderSizePixel=0
+x.Parent=g
+b.MouseButton1Click:Connect(function()
+t=not t
+b.Text=t and"Pause"or"Play"
+if snd then if t then snd:Resume() else snd:Pause() end end
+end)
+x.MouseButton1Click:Connect(function()
+if snd then snd:Stop() snd:Destroy() end
+g:Destroy()
+end)
+local lt=tick()
+r.RenderStepped:Connect(function()
+if t then
+local nt=tick()
+if nt-lt>=d/1000 then
+lt=nt
+a[c].Visible=false
+c=c+1
+if c>#a then c=1 end
+a[c].Visible=true
+end
+end
+end)
